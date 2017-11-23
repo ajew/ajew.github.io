@@ -3,12 +3,35 @@
 <html>
 <head>
 	<title>Análise da tabela nutricional de fast-foods</title>
-	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	<link href="bootstrap.css" rel="stylesheet" media="screen">
-	<script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/tableau_v8.debug.js"></script>
+	<script type="text/javascript" src="https://public.tableausoftware.com/javascripts/api/tableau_v8.debug.js"></script>
 	<script type="text/javascript" src="tableau.js"></script>
 </head>
 <body>
+	<script type="text/javascript">
+		var viz, workbook;
+
+		window.onload= function() {
+		var vizDiv = document.getElementById('viz');
+		var vizURL = "https://public.tableau.com/profile/arthur.wanderley#!/vizhome/Anlisefastfoods/Planilha1";
+		var options = {
+			width: '1000px',
+			height: '1000px',
+			hideToolbar: true,
+			hideTabs: true,
+			onFirstInteractive: function () {
+			workbook = viz.getWorkbook();
+			document.getElementById('sheetName').innerHTML = viz.getWorkbook().getActiveSheet().getName();
+			}
+		};
+		viz = new tableauSoftware.Viz(vizDiv, vizURL, options);
+		viz.addEventListener('tabswitch', function(event) {
+			document.getElementById('sheetName').innerHTML = event.getNewSheetName();
+		});
+		};
+	
+	</script>
 	<div class='container'>
 		<div class='row'>
 				<div class='span3'><img src='logo.png' ></div>
