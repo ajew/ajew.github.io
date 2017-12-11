@@ -6,7 +6,7 @@ var viz, workbook;
 
 window.onload= function() {
 	var vizDiv = document.getElementById('viz');
-	var vizURL = "https://public.tableau.com/profile/arthur.wanderley#!/vizhome/Anlisefastfoods/Planilha1";
+	var vizURL = "https://public.tableau.com/profile/arthur.wanderley#!/vizhome/ComparativoFastFoods/Painel1";
 	var options = {
 		width: '1000px',
 		height: '1000px',
