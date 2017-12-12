@@ -1,55 +1,98 @@
 <!DOCTYPE html>
-
 <html>
-<head>
-	<title>Análise da tabela nutricional de fast-foods</title>
-	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-	<link href="bootstrap.css" rel="stylesheet" media="screen">
-	<script type="text/javascript" src="https://public.tableausoftware.com/javascripts/api/tableau_v8.debug.js"></script>
-	<script type="text/javascript" src="tableau.js"></script>
-</head>
+<title>Fast Food Analytics</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Playfair Display";
+    letter-spacing: 5px;
+}
+</style>
 <body>
-	<script type="text/javascript">
-		var viz, workbook, viz1, workbook1;
 
-		window.onload= function() {
-		var vizDiv = document.getElementById('viz');
-		var vizURL = "https://public.tableau.com/shared/J6G38BCK5?:display_count=yes";
-		var options = {
-			width: '1050px',
-			height: '1050px',
-			hideToolbar: true,
-			hideTabs: true,
-			onFirstInteractive: function () {
-			workbook = viz.getWorkbook();
-			document.getElementById('sheetName').innerHTML = viz.getWorkbook().getActiveSheet().getName();
-			}
-		};
-		viz = new tableauSoftware.Viz(vizDiv, vizURL, options);
-		viz.addEventListener('tabswitch', function(event) {
-			document.getElementById('sheetName').innerHTML = event.getNewSheetName();
-		});
-		};
-		
-		
-	
-	</script>
-	<div class='container'>
-		<div class='row'>
-				<div class='span3'><img src='logo.png' ></div>
-			<h2 class='span7 pagination-centered'>Análise fast-foods</h2>
-		</div>
-		<div class='row'><h3 class='offset3 span7 pagination-centered' id='sheetName'></h3></div>
-		<div class='row'>
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="#home" class="w3-bar-item w3-button">Fast Food Analytics</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#sobre" class="w3-bar-item w3-button">Sobre</a>
+      <a href="#proposta" class="w3-bar-item w3-button">Proposta de Projeto</a>
+      <a href="teste.html" class="w3-bar-item w3-button">Demo</a>
+      <a href="#contato" class="w3-bar-item w3-button">Contato</a>
+    </div>
+  </div>
+</div>
 
-			
-			<div id='viz'></div>
-			<div id='viz1'></div>
-			
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image" src="hamburger.jpg" alt="Hamburger Catering" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+    <h1 class="w3-xxlarge">Fast Food Analytics</h1>
+  </div>
+</header>
 
-			<!-- This is the end of the section where we will do our work. -->
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
 
-		</div>
-	</div>
+  <!-- About Section -->
+
+    <div class="w3-padding-64" id="sobre">
+      <h1 class="w3-center">Sobre</h1><br>
+      <h5 class="w3-center">Projeto da disciplina de Visualização de Dados, ministrada pelo professor Nivan Ferreira da Universidade Federal de Pernambuco (UFPE)</h5>
+      <p class="w3-large">Utilizamos como base de dados, informações nutricionais de 3 redes de fast food populares(Burger King, Mc Donald, Subway) para construção de gráficos com tableau e extração de informações a partir destes.</p>
+      <p class="w3-large">Foi utilizado como base o site do <a target="_blank" href="http://calorielab.com/index.html">Calorie Lab</a> para a retirada dos dados necessários.</p>
+    </div>
+  
+  <hr>
+  
+  <!-- Github Section -->
+  <div class="w3-padding-64" id="proposta">
+    <div class="w3-padding-large">
+      <h1 class="w3-center">Proposta de Projeto</h1><br>
+      <p class="w3-large">Atualmente o índice de obesidade no mundo vem aumentando consideravelmente, e com isso trazendo diversos problemas para a saúde e bem estar social destes indivíduos. A partir disto, vários estudos e pesquisas foram feitos para averiguar algumas possíveis causas deste problema que afeta cerca de 30% da população mundial, segundo o jornal "The New England Journal of Medicine", e foi constatado que a alimentação exagerada de comidas gordurosas como os fast foods, está influenciando diretamente no acréscimo da obesidade no mundo.</p>
+      <p class="w3-large">Portanto, este trabalho servirá para mostrar o quão prejudicial estes alimentos podem ser, contendo uma grande quantidade de calorias e outros componentes que não deveriam ser ingeridos em grandes quantidades.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Contact Section -->
+  <div class="w3-padding-64" id="contato">
+    <h1>Contato</h1><br>
+    <div style=" text-align: center;">
+      <div style= "width:150px; display: inline-block; margin-right: 30px;">
+        <img class="w3-image" src="arthur.jpg" alt="Arthur" style="border-radius: 50%;">
+        <p class="w3-large">Arthur Jorge (ajew@cin.ufpe.br)</p>
+      </div>
+      <div style= "width:150px;display: inline-block;margin-right: 30px;">
+        <img class="w3-image" src="gol.jpg" alt="Anderson" style="border-radius: 50%;">
+        <p class="w3-large">Anderson Mota (ams9@cin.ufpe.br)</p>
+      </div>
+      <div style= "width:150px;display: inline-block;">
+        <img class="w3-image" src="wilquer.jpg" alt="Wilquer" style="border-radius: 50%;">
+        <p class="w3-large">Wilquer Lima (wtl@cin.ufpe.br)</p>
+      </div>
+    </div>
+  </div>
+  
+<!-- End page content -->
+</div>
+
+<div id="demo">
+  
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey">
+  <div style="display: inline-block; margin:10px;">
+    <img class="w3-image" src="cin.png" alt="cin" style="width: 130px;">
+    <img class="w3-image" src="ufpe.png" alt="ufpe" style="width: 100px;">
+  </div>
+</footer>
+
 </body>
 </html>
