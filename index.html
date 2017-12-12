@@ -10,14 +10,14 @@
 </head>
 <body>
 	<script type="text/javascript">
-		var viz, workbook;
+		var viz, workbook, viz1, workbook1;
 
 		window.onload= function() {
 		var vizDiv = document.getElementById('viz');
-		var vizURL = "https://public.tableau.com/views/ComparativoFastFoods/Painel1?:embed=y&:display_count=yes&publish=yes";
+		var vizURL = "https://public.tableau.com/shared/J6G38BCK5?:display_count=yes";
 		var options = {
-			width: '1000px',
-			height: '1000px',
+			width: '1050px',
+			height: '1050px',
 			hideToolbar: true,
 			hideTabs: true,
 			onFirstInteractive: function () {
@@ -30,6 +30,8 @@
 			document.getElementById('sheetName').innerHTML = event.getNewSheetName();
 		});
 		};
+		
+		
 	
 	</script>
 	<div class='container'>
@@ -42,6 +44,7 @@
 
 			
 			<div id='viz'></div>
+			<div id='viz1'></div>
 			
 
 			<!-- This is the end of the section where we will do our work. -->
